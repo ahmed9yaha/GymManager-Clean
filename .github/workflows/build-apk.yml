@@ -20,11 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Initialize Expo Project Automatically
-        run: npx eas-cli project:init --non-interactive
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-
       - name: Build APK on Expo Cloud
         run: eas build --platform android --profile preview --non-interactive
         env:
